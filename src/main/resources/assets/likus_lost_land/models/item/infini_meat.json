@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "likus_lost_land:item/infini_meat"
+  }
+}

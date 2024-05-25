@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model":  "likus_lost_land:block/liku_head" },
+    "facing=east": {"model":  "likus_lost_land:block/liku_head", "y" : 90 },
+    "facing=south": {"model":  "likus_lost_land:block/liku_head", "y" : 180 },
+    "facing=west": {"model":  "likus_lost_land:block/liku_head", "y" : 270 }
+  }
+}

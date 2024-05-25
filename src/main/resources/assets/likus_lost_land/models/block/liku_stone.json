@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures" : {
+      "all": "likus_lost_land:block/liku_stone"
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stone"
+    },
+    "@": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "result": {
+    "item": "likus_lost_land:liku_stone",
+    "count": 8
+  }
+}

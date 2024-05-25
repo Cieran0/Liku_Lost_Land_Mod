@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "likus_lost_land:liku_stone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stone",
+    "count": 1
+  }
+}
