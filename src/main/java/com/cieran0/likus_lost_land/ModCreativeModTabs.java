@@ -16,11 +16,11 @@ public class ModCreativeModTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LikusLostLand.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> LIKU_TAB = CREATIVE_MODE_TABS.register("liku_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INFINI_MEAT.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.LIKU_HEAD.get()))
                     .title(Component.translatable("creativetab.liku_tab"))
                     .displayItems(((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.INFINI_MEAT.get());
-                        output.accept(ModBlocks.LIKU_STONE.get());
+                        //output.accept(ModItems.INFINI_MEAT.get());
+                        //output.accept(ModBlocks.LIKU_STONE.get());
                         output.accept(ModBlocks.LIKU_HEAD.get());
                     }))
                     .build());

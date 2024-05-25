@@ -20,8 +20,8 @@ public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, LikusLostLand.MOD_ID);
 
-    public static final RegistryObject<Block> LIKU_STONE = registerBlock("liku_stone",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    //public static final RegistryObject<Block> LIKU_STONE = registerBlock("liku_stone",
+    //        () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     public static final RegistryObject<Block> LIKU_HEAD = registerBlock("liku_head",
             () -> new LikusHeadBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(10_000_000,3600000.0F)));

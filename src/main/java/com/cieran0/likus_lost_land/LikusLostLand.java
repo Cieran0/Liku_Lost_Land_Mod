@@ -57,7 +57,7 @@ public class LikusLostLand
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.INFINI_MEAT);
+            //event.accept(ModItems.INFINI_MEAT);
         }
     }
 
