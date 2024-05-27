@@ -1,0 +1,13 @@
+{
+  "pink_panther": {
+    "sounds": [
+      "likus_lost_land:pink_panther"
+    ]
+  },
+
+  "silence": {
+    "sounds": [
+        "likus_lost_land:silence"
+    ]
+  }
+}

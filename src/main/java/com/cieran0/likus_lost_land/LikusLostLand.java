@@ -4,10 +4,13 @@ import com.cieran0.likus_lost_land.blocks.ModBlocks;
 import com.cieran0.likus_lost_land.event.ModEvents;
 import com.cieran0.likus_lost_land.gui.LikusHeadScreen;
 import com.cieran0.likus_lost_land.items.ModItems;
+import com.cieran0.likus_lost_land.sound.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,6 +24,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -37,6 +41,7 @@ public class LikusLostLand
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
@@ -52,6 +57,7 @@ public class LikusLostLand
 
         modEventBus.addListener(this::addCreative);
 
+        ModSounds.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
@@ -66,6 +72,7 @@ public class LikusLostLand
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
     }
+
 
     // Add the example block item to the building blocks tab
     // You can use SubscribeEvent and let the Event Bus discover methods to call
