@@ -4,7 +4,6 @@ import com.cieran0.likus_lost_land.blocks.ModBlocks;
 import com.cieran0.likus_lost_land.event.ModEvents;
 import com.cieran0.likus_lost_land.gui.LikusHeadScreen;
 import com.cieran0.likus_lost_land.items.ModItems;
-import com.cieran0.likus_lost_land.sound.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -55,16 +54,7 @@ public class LikusLostLand
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new ModEvents());
 
-        modEventBus.addListener(this::addCreative);
-
-        ModSounds.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            //event.accept(ModItems.INFINI_MEAT);
-        }
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

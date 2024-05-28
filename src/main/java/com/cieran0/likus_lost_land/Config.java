@@ -38,21 +38,17 @@ public class Config
 //            .comment("A list of items to log on common setup.")
 //            .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final List<String> Q_AND_A_LIST = List.of(
-            "Who are you?", "I am Liku, a lost soul trapped in Minecraft.",
-            "Where do you come from?", "I come from the End of the World.",
-            "How can I help you?", "Carry me to my home at the End of the World.",
-            "Where is your home?", "My home is at the End of the World.",
-            "How do I find the End of the World?", "Travel in any direction until you reach it.",
-            "Are there any dangers?", "The journey is long and perilous.",
-            "What happens when you return?", "I will be at peace and the curse will lift.",
-            "Why do you need my help?", "I can no longer move on my own.",
-            "Will you reward me?", "You will have my eternal gratitude."
-    );
+    private static final List<String> QUESTIONS = List.of("What?");
+    private static final List<String> ANSWERS = List.of("I am liku");
 
-    private static final ForgeConfigSpec.ConfigValue<List<String>> Q_AND_A = BUILDER
-            .comment("Questions And Answers")
-            .define("questions_and_answers", Q_AND_A_LIST);
+    private static final ForgeConfigSpec.ConfigValue<List<String>> Q = BUILDER
+            .comment("Questions")
+            .define("questions", QUESTIONS);
+
+    private static final ForgeConfigSpec.ConfigValue<List<String>> A = BUILDER
+            .comment("Answers")
+            .define("answers", ANSWERS);
+
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -74,28 +70,10 @@ public class Config
     static void onLoad(final ModConfigEvent event)
     {
         System.out.println("HELLO!!");
+        Questions = Q.get();
+        Answers = A.get();
 
-//        logDirtBlock = LOG_DIRT_BLOCK.get();
-//        magicNumber = MAGIC_NUMBER.get();
-//        magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
-//
-//        // convert the list of strings into a set of items
-//        items = ITEM_STRINGS.get().stream()
-//                .map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)))
-//                .collect(Collectors.toSet());
-
-        List<String> qanda = Q_AND_A.get();
-
-        for (int i = 0; i < qanda.size(); i++) {
-            if(i % 2 == 0)
-                Questions.add(qanda.get(i));
-            else
-                Answers.add(qanda.get(i));
-        }
-
-        for (int i = 0; i < Answers.size(); i++) {
-            System.out.println(Questions.get(i) + " ?" + Answers.get(i));
-        }
+        assert Questions.size() == Answers.size() && Questions.size() > 0 : "There must be equal numbers of questions ands answers";
     }
 
 
